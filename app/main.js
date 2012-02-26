@@ -1,7 +1,7 @@
 require.config( {
     paths: {
-        'backbone':         'libs/AMDbackbone-0.5.3',
-        'underscore':       'libs/underscore-1.2.2',
+        'backbone':         'libs/AMDbackbone-0.9.1',
+        'underscore':       'libs/underscore-1.3.1',
         'text':             'libs/require/text',
         'jquery':           'libs/jquery-1.7.1',
         'json2':            'libs/json2',
