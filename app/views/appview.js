@@ -1,5 +1,5 @@
-define( ['jquery', 'backbone', 'utils', 'views/resultList', 'views/photoList', 'views/vibemakerWelcome'],
-        function( $, Backbone, utils, ResultList, PhotoList, VibemakerWelcome ) {
+define( ['jquery', 'backbone', 'utils', 'views/resultList', 'views/photoList', 'views/vibemakerWelcome', 'models/VibemakerModel'],
+        function( $, Backbone, utils, ResultList, PhotoList, VibemakerWelcome, VibemakerModel ) {
             // Using ECMAScript 5 strict mode during development. By default r.js will ignore that.
             "use strict";
 
@@ -13,10 +13,13 @@ define( ['jquery', 'backbone', 'utils', 'views/resultList', 'views/photoList', '
                     "keydown #searchbox" : "handleKey"
                 },
 
-                setView: function( option ) {
+                setView: function( option , data ) {
 		    console.log('setView')
-                    if ( option == 'vibemakerWelcome' ) {
-                        this.vibemaker_view = new VibemakerWelcome;
+                    if ( option == 'vibemakerWelcome' && data!="undefined") {
+			console.log('data vibemaker');
+			console.log(data);
+			var vibemaker_authenticated = new VibemakerModel({id:data['vibemaker_id']});
+                        this.vibemaker_view = new VibemakerWelcome({model: vibemaker_authenticated});
                     }
                     else if ( option == 'search' ) {
                         this.result_view = new ResultList;

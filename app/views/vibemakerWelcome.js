@@ -8,7 +8,6 @@ define( ['jquery', 'backbone', 'underscore', 'models/VibemakerModel', 'text!temp
 
                 initialize: function() {
 		    console.log('initWelcome');
-                    this.model = new VibemakerModel;
                     _.bindAll(this, "renderWelcome");
                     this.collection.bind( "reset", this.renderWelcome );
                 },

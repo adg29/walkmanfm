@@ -4,6 +4,11 @@ define( ['backbone'],
             "use strict";
 
             var VibemakerModel = Backbone.Model.extend( {
+	    	urlRoot : '/vibemakers',
+		initialize: function(attributes) {
+			console.log('initalizel VibemakerModel');
+			console.log(attributes);
+		}
             } );
 
             return VibemakerModel;

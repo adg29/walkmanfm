@@ -105,11 +105,9 @@ define( ['jquery' ],
 				// Response will be something like 'sp://my_app_name?token=xxxxxxx'
 				console.log("Success! Here's the response URL: " + response);
                     		utils.loadPrompt( 'Loading profile...' );
-				ctx.setView('vibemakerWelcome');
-				/*
-			    	$.when( utils.fetchVibemaker( searchType, query, sort, page ) )
-				    .then( $.proxy( function( response ) {
-				*/
+				vibemaker_id = response.split('/');
+				console.log( vibemaker_id[vibemaker_id.length-1] );
+				ctx.setView('vibemakerWelcome', {vibemaker_id: vibemaker_id[vibemaker_id.length-1] } );
 
 			},
 
