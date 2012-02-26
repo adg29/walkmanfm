@@ -1,0 +1,25 @@
+{
+	"BundleType": "Application",
+	"AppIcon": {
+		"18x18": "assets/mm-icon.png",
+		"64x64": "assets/logo64.png",
+		"128x128": "assets/logo128.png"
+	},
+	"AppName": {
+		"en": "walkmanfm"
+	},
+
+    "AppDescription" : "Drop Beats, Define Vibes",
+	"SupportedLanguages": [
+		"en"
+	],
+	"RequiredPermissions": [
+		"http://*.echonest.com",
+		"http://*.foursquare.com",
+		"http://walkmanapi.dev"
+	],
+
+    "BundleIdentifier" : "Walkman",
+    "RequiredInterface" : 1,
+    "VendorIdentifer" : "com.vokoderfm"
+}

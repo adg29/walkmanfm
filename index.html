@@ -1,0 +1,263 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Walkman.fm</title>
+    
+    <link rel="stylesheet" href="css/jquery.mobile-1.0.min.css"/>
+    <link rel="stylesheet" href="css/jquery.ui.datepicker.css"/>
+    <link rel="stylesheet" href="css/custom_mobile_theme.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script data-main="app/main" type="text/javascript" src="app/libs/require/require-1.0.2.min.js"></script>
+    
+</head>
+
+<body lang="en">
+
+
+<!--
+/********************************************************
+*  Index/Home 
+*********************************************************/
+-->
+
+<div id="index" data-role="page" data-theme="d">
+
+    <div class="app-header" data-role="header">
+        <h1 class="app-title">Walkman.fm</h1>
+        <a href="#login" data-icon="gear" class="ui-btn-right">Login
+        </a>
+    </div>
+
+
+    <!--menu-->
+    <div class="nav-glyphish-example app-nav" data-position="fixed">
+        <div data-role="navbar" class="nav-glyphish-example" data-grid="d" data-theme="b">
+            <ul>
+                <li><a href="#dropabeat" id="add-icon" data-icon="add">Drop Beats</a></li>
+                <li><a href="#about" id="instructions-icon" data-icon="custom">Define Vibes</a></li>
+		<!--
+                <li><a href="#options" id="options-icon" data-icon="custom">Options</a></li>
+                <li><a href="#source" id="source-icon" data-icon="custom">API Docs</a></li>
+                <li><a href="#about" id="about-icon" data-icon="custom">About</a></li>
+		-->
+            </ul>
+        </div>
+    </div>
+    <!--end menu-->
+
+
+    <div class="app-logo-cont">
+	<h1>
+   	Walk Drop and Vibe 
+	</h1>
+	<!--
+        <img class="app-logo" src="img/flickly.jpg"/>
+	-->
+    </div>
+
+
+    <div data-role="content" data-theme="d" id="content-main">
+
+
+        <div id="appview">
+
+            <div id="homeheader">
+	    	<h3>
+            	</h3>
+            </div>
+
+
+            <form method="post" action="#" id='queryForm' name="queryForm" onsubmit="return false">
+        		<div data-role="fieldcontain">
+        		    <label for="name">Name:</label>
+        		    <input type="text" name="invite-name" id="invite-name" value=""  />
+        		</div>	
+            </form>
+
+
+            <!--search type-->
+            <select id="invite-location" data-native-menu="false" data-theme="b">
+                <option value="" selected>Where Do You Want To Go?</option>
+            </select>
+            <!--end search type-->
+
+
+            <div class="search-meta">
+            </div>
+
+
+            <!--end search section-->
+
+        </div>
+    </div>
+    <!-- /content -->
+
+    <div class="app-message">
+
+        <p>
+            <strong>
+            Drop beats at with friends and strangers all over your world.
+            <br/>
+
+	    <a id="foursquare_login" href="#login">
+	    	<img src="img/foursquare-connect-blue@2x.png" alt="Login with Foursquare."/>
+	    </a>
+	     <!--
+	     <input id="foursquare_login" type="image" value="Login with Foursquare" />
+	     -->
+	    </strong>
+        </p>
+
+    </div>
+
+
+</div>
+
+
+<!--
+/********************************************************
+*  Options
+*********************************************************/
+-->
+
+
+<div id="login" data-role="page" data-theme="b">
+    <div data-role="header" data-theme="a">
+        <h1>Welcome to Walkman.fm</h1>
+    </div>
+    <div data-role="content">
+        <ul id="vibemaker_info" data-role="listview" data-inset="true" data-theme="c" data-dividertheme="c">
+
+        </ul>
+    </div>
+
+
+</div>
+
+
+<!--
+/********************************************************
+*  Drop A Beat
+*********************************************************/
+-->
+
+<div id="dropabeat" data-role="page" data-theme="b">
+    <div data-role="header" data-theme="a">
+        <h1>Help</h1>
+    </div>
+    <div data-role="content">
+        <ul data-role="listview">
+            <li data-role="list-divider">Walkman.fm How To</li>
+            <li>
+                <h3>Drop A Beat!</h3>
+
+                <p><strong>It's simple.</strong></p>
+
+                <p>Checking to your location Search for your location and hit 'enter' or search. The track that you are currently listening to can then be added to you foursquare venue.</p>
+
+            </li>
+	    <!--
+            <li>
+                <h3>Options</h3>
+
+                <p><strong>Advanced search options are available.</strong></p>
+
+                <p>Search by type, geo-location and more.</p>
+            </li>
+	    -->
+        </ul>
+    </div>
+</div>
+
+
+<!--
+/********************************************************
+*  Source
+*********************************************************/
+-->
+
+<div id="source" data-role="page" data-theme="b">
+    <div data-role="header" data-theme="a">
+        <h1>API Docs</h1>
+    </div>
+    <div data-role="content">
+        <p>For the complete <strong>Flickr API Documentation</strong> with references to the methods and formats supported, see <a href="http://www.flickr.com/services/api/">here</a>.</p>
+        <p>You can also sign-up for your own <a href="http://www.flickr.com/services/api/keys/">API keys</a>.</p>
+    </div>
+</div>
+
+<!--
+/********************************************************
+*  About
+*********************************************************/
+-->
+
+
+<div id="about" data-role="page" data-theme="b">
+    <div data-role="header" data-theme="a">
+        <h1>About</h1>
+    </div>
+    <div data-role="content">
+        <p>Walkman.fm is written using<a href="http://documentcloud.github.com/backbone/">Backbone.js</a> and <a href="http://jquerymobile.com">jQuery Mobile</a>. <a href="http://requirejs.org/">Require.js</a> and the <a href="https://github.com/amdjs/amdjs-api/wiki/AMD">AMD</a> module format are used for breaking components down into modules whilst <a href="http://documentcloud.github.com/underscore/">Underscore.js</a> is used for templating.</p>
+    </div>
+</div>
+
+<!--
+/********************************************************
+*  PhotoView template
+*********************************************************/
+-->
+
+
+<div id="photo" data-role="page" data-theme="d">
+    <div data-role="header" data-theme="a">
+        <h1>Viewing photo</h1>
+    </div>
+    <div data-role="content">
+        <div id="photoview"></div>
+        <ul id="photoviewholder" data-role="listview" data-inset="true" data-theme="c" data-dividertheme="c">
+        </ul>
+    </div>
+
+</div>
+
+<!--
+/********************************************************
+*  ListView
+*********************************************************/
+-->
+
+<div id="search" data-role="page" data-theme="d">
+
+    <div data-role="header" data-theme="a" data-role="controlgroup">
+        <h1>Search Results</h1>
+        <a href="#" id="prevSet">Previous</a>
+        <a href="#" class="ui-btn-active" id="nextSet">Next</a>
+    </div>
+
+
+    <div data-role="content">
+        <ul id="listviewholder" data-role="listview" data-inset="true" data-theme="c" data-dividertheme="c">
+
+        </ul>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul><a href="/" class="ui-btn-active" data-ajax="false" class="ui-btn-right" data-direction="reverse">New
+                Search</a></ul>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="ui-tint">
+</div>
+
+
+</body>
+</html>
